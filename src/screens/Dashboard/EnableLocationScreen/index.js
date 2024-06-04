@@ -1,6 +1,7 @@
-import { View, Text, ImageBackground, StyleSheet, Image } from 'react-native';
-import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { View, Text, SafeAreaView, TouchableOpacity, ImageBackground, StyleSheet, Image } from 'react-native'
+import React, { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { setUser } from '../../../redux/Reducers/AuthReducer';
 import Wrapper from '../../../components/Wrapper';
 import Loader from '../../../components/Loader';
 import { Colors, Fonts, Icons, Images } from '../../../assets';
@@ -21,7 +22,7 @@ const EnableLocationScreen = ({ navigation }) => {
         }, 3000);
     }
     return (
-        <Wrapper backgroundColor={Colors.RED}>
+        <Wrapper transparent barStyle={"light-content"}>
             <Loader visible={loading} />
             <ImageBackground source={Images.RED_BACKGROUND} style={styles.main}>
                 <Spacing size={UtilityMethods.hp(10)} />

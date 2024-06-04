@@ -42,7 +42,7 @@ const LoginScreen = ({ navigation }) => {
         navigation.navigate(Routes.SIGNUP_SCREEN)
     }
     return (
-        <Wrapper>
+        <Wrapper transparent backgroundColor="white">
             <Loader visible={loading} />
             <ImageBackground source={Images.RED_BACKGROUND} style={styles.background}>
                 <ScrollView contentContainerStyle={styles.background}>
@@ -111,6 +111,7 @@ const styles = StyleSheet.create({
     },
     background: {
         flex: 1,
+        paddingTop: UtilityMethods.hp(1),
     },
     header: {
         flex: 1,

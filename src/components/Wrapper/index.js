@@ -1,19 +1,26 @@
 import React from 'react';
-import { SafeAreaView, StyleSheet, View, Platform } from 'react-native';
+import { SafeAreaView, StyleSheet, View, Platform, StatusBar } from 'react-native';
 
-const Wrapper = ({ children, style, backgroundColor }) => {
+const Wrapper = ({ children, style, backgroundColor, transparent, barStyle }) => {
     const combinedStyles = [
         styles.default,
         { backgroundColor: backgroundColor || 'white' },
         style,
     ];
 
+    const Container = transparent ? View : SafeAreaView;
+
     return (
-        <SafeAreaView style={combinedStyles}>
+        <Container style={combinedStyles}>
+            <StatusBar
+                barStyle={barStyle ? barStyle : Platform.OS === 'ios' ? 'dark-content' : 'light-content'}
+                translucent={transparent}
+                backgroundColor={transparent ? 'transparent' : backgroundColor || 'white'}
+            />
             <View style={styles.content}>
                 {children}
             </View>
-        </SafeAreaView>
+        </Container>
     );
 };
 

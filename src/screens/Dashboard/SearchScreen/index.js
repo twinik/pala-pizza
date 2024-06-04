@@ -1,4 +1,4 @@
-import { ImageBackground, StyleSheet, Image, View, Alert, FlatList } from 'react-native';
+import { ImageBackground, StyleSheet, Image, Text, View, Alert, FlatList } from 'react-native';
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import Wrapper from '../../../components/Wrapper';
@@ -13,26 +13,26 @@ import MenuItem from './MenuItem';
 const menuData = [
     {
         id: 1,
-        image: Images.SEARCH_ITEM1,
+        image: Images.SEARCH_ITEM1, // Replace with your image URL
         title: 'Calzón 4 Quesos',
         description: 'Lorem ipsum dolor sit amet, consectetuer Lorem ipsum dolor sit amet, consectetuer',
         price: 418,
     },
     {
         id: 2,
-        image: Images.SEARCH_ITEM2,
+        image: Images.SEARCH_ITEM2, // Replace with your image URL
         title: 'Ensalada Caribeña',
         description: 'Lorem ipsum dolor sit amet, consectetuer Lorem ipsum dolor sit amet, consectetuer',
         price: 378,
     }, {
         id: 3,
-        image: Images.SEARCH_ITEM3,
+        image: Images.SEARCH_ITEM3, // Replace with your image URL
         title: 'Cheesy Garlic Bread',
         description: 'Lorem ipsum dolor sit amet, consectetuer Lorem ipsum dolor sit amet, consectetuer',
         price: 297,
     }, {
         id: 4,
-        image: Images.SEARCH_ITEM4,
+        image: Images.SEARCH_ITEM4, // Replace with your image URL
         title: 'Cheeseburger Pala Pizza',
         description: 'Lorem ipsum dolor sit amet, consectetuer Lorem ipsum dolor sit amet, consectetuer',
         price: 387,
@@ -106,12 +106,14 @@ const styles = StyleSheet.create({
         fontFamily: Fonts.SIGNIKA_SEMI_BOLD,
         textAlign: 'center',
         color: 'black',
+        // marginTop: 5
     },
     body: {
         flex: 1,
         borderTopRightRadius: 30,
         borderTopLeftRadius: 30,
         backgroundColor: 'white',
+        // padding: 20,
     },
     separator: {
         height: 1,

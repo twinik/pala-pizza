@@ -1,6 +1,7 @@
-import { View, Text, TouchableOpacity, StyleSheet, Image, Alert, Platform } from 'react-native';
-import React from 'react';
-import { useDispatch } from 'react-redux';
+import { View, Text, SafeAreaView, TouchableOpacity, StyleSheet, Image, Alert, Platform } from 'react-native'
+import React from 'react'
+import { useDispatch } from 'react-redux'
+import { setUser } from '../../../redux/Reducers/AuthReducer';
 import Wrapper from '../../../components/Wrapper';
 import { Colors, Fonts, Icons, Images } from '../../../assets';
 import UtilityMethods from '../../../utility/UtilityMethods';

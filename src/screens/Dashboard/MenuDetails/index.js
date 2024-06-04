@@ -1,11 +1,16 @@
-import { View, ImageBackground, StyleSheet, Image } from 'react-native';
-import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { View, Text, SafeAreaView, TouchableOpacity, ImageBackground, StyleSheet, Image, ScrollView, FlatList, Button, Alert } from 'react-native'
+import React, { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { setUser } from '../../../redux/Reducers/AuthReducer';
 import Wrapper from '../../../components/Wrapper';
 import Loader from '../../../components/Loader';
-import { Icons, Images } from '../../../assets';
+import { Colors, Fonts, Icons, Images } from '../../../assets';
 import UtilityMethods from '../../../utility/UtilityMethods';
+import Spacing from '../../../components/spacing';
+import { FontSize } from '../../../utility/FontSize';
+import PrimaryButton from '../../../components/PrimaryButton';
 import Routes from '../../../navigation/Routes';
+import CustomModal from '../../../components/CustomModal';
 import CategorySelector from './CategorySelector';
 import HorizontalItemCard from './HorizontalItemCard';
 import VerticalItem from './VerticalItem';

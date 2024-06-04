@@ -1,6 +1,6 @@
-import { View, StyleSheet, ScrollView, ImageBackground, Alert } from 'react-native';
+import { View, StyleSheet, Image, ScrollView, ImageBackground, Alert } from 'react-native';
 import React, { useState } from 'react';
-import { Colors, Fonts, Images } from '../../../assets';
+import { Colors, Fonts, Icons, Images } from '../../../assets';
 import Wrapper from '../../../components/Wrapper';
 import UtilityMethods from '../../../utility/UtilityMethods';
 import Loader from '../../../components/Loader';
@@ -10,6 +10,7 @@ import InfoRow from './InfoRow';
 import AddressCard from './AddressCard';
 import HorizontalItem from './HorizontalItem';
 import ItemCard from './ItemCard';
+import PrimaryButton from '../../../components/PrimaryButton';
 import { FontSize } from '../../../utility/FontSize';
 import CustomButton from '../../../components/CustomButton.js';
 import Prompt from '../../../components/Prompt';
