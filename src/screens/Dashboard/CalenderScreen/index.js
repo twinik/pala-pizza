@@ -1,4 +1,4 @@
-import { ImageBackground, StyleSheet, Image, Text, View } from 'react-native';
+import { ImageBackground, StyleSheet, Image, Text, View, Platform, StatusBar } from 'react-native';
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import Wrapper from '../../../components/Wrapper';
@@ -21,7 +21,7 @@ const CalenderScreen = ({ navigation }) => {
     const dispatch = useDispatch()
     const [loading, setLoading] = useState(false)
     return (
-        <Wrapper>
+        <Wrapper transparent>
             <Loader visible={loading} />
             <ImageBackground source={Images.BACKGROUND} style={styles.main}>
                 <Spacing size={UtilityMethods.hp(1)} />
@@ -48,6 +48,7 @@ export { CalenderScreen }
 const styles = StyleSheet.create({
     main: {
         flex: 1,
+        paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0
     },
     icon: {
         height: UtilityMethods.hp(12),

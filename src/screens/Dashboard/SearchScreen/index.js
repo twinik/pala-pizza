@@ -51,7 +51,7 @@ const SearchScreen = ({ navigation }) => {
         Alert.alert('Item added to cart!');
     };
     return (
-        <Wrapper>
+        <Wrapper transparent>
             <Loader visible={loading} />
             <ImageBackground source={Images.BACKGROUND} style={styles.main}>
                 <Spacing size={UtilityMethods.hp(2)} />

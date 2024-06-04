@@ -9,7 +9,8 @@ import {
     Image,
     TouchableNativeFeedback, Platform,
     StyleSheet,
-    Alert
+    Alert,
+    BackHandler
 } from "react-native";
 import { Colors, Icons } from "../../assets";
 import UtilityMethods from "../../utility/UtilityMethods";
@@ -47,6 +48,19 @@ const BottomTabs = ({ navigation }) => {
             navigation.navigate(Routes.MENU_SCREEN);
         }, 0);
         return () => clearTimeout(timer);
+    }, []);
+    //  on Press hardware back button on android go to Enable location screen
+    React.useEffect(() => {
+        const backAction = () => {
+
+            navigation.navigate(Routes.ENABLE_LOCATION);
+            return true;
+        };
+        const backHandler = BackHandler.addEventListener(
+            "hardwareBackPress",
+            backAction
+        );
+        return () => backHandler.remove();
     }, []);
     return (
         <>

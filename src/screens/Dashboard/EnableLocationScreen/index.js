@@ -10,6 +10,7 @@ import Spacing from '../../../components/spacing';
 import { FontSize } from '../../../utility/FontSize';
 import PrimaryButton from '../../../components/PrimaryButton';
 import Routes from '../../../navigation/Routes';
+import { BAR_STYLE } from '../../../utility/Constants';
 
 const EnableLocationScreen = ({ navigation }) => {
     const dispatch = useDispatch()
@@ -22,7 +23,7 @@ const EnableLocationScreen = ({ navigation }) => {
         }, 3000);
     }
     return (
-        <Wrapper transparent barStyle={"light-content"}>
+        <Wrapper transparent barStyle={BAR_STYLE.LIGHT}>
             <Loader visible={loading} />
             <ImageBackground source={Images.RED_BACKGROUND} style={styles.main}>
                 <Spacing size={UtilityMethods.hp(10)} />

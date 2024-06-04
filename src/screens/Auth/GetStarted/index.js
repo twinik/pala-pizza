@@ -17,7 +17,7 @@ const GetStartedScreen = ({ navigation }) => {
     }
 
     return (
-        <Wrapper>
+        <Wrapper transparent >
             <ImageBackground source={Images.GET_STARTED_BACKGROUND} style={styles.main}>
                 <Spacing size={UtilityMethods.hp(4)} />
                 <Image source={Icons.PIZZA1} style={styles.icon} resizeMode='contain' />

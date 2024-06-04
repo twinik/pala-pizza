@@ -50,7 +50,7 @@ const CartScreen = ({ navigation }) => {
         navigation.navigate(Routes.MENU_STACK)
     }
     return (
-        <Wrapper>
+        <Wrapper transparent>
             <View style={styles.main}>
                 <View style={styles.top}>
                     <TouchableOpacity style={styles.backBtn} onPress={onPressBack} >

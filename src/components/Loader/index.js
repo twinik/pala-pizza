@@ -2,6 +2,7 @@ import React from 'react';
 import { Modal, View, StyleSheet } from 'react-native';
 import LottieView from 'lottie-react-native';
 import Animations from '../../assets/animations/Animations';
+import UtilityMethods from '../../utility/UtilityMethods';
 
 
 const Loader = ({ visible }) => {
@@ -11,6 +12,7 @@ const Loader = ({ visible }) => {
             animationType="none"
             visible={visible}
             onRequestClose={() => { }}
+            statusBarTranslucent={true}
         >
             <View style={styles.modalBackground}>
                 <View style={styles.loaderContainer}>
@@ -28,7 +30,8 @@ const Loader = ({ visible }) => {
 
 const styles = StyleSheet.create({
     modalBackground: {
-        flex: 1,
+        height: UtilityMethods.hp(100),
+        width: UtilityMethods.wp(100),
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: 'rgba(0, 0, 0, 0.5)',

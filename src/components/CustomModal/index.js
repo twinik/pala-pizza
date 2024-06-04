@@ -8,6 +8,7 @@ const CustomModal = ({ visible, onClose, children, backdropStyle, containerStyle
             animationType="fade"
             visible={visible}
             onRequestClose={onClose}
+            statusBarTranslucent={true}
         >
             <TouchableOpacity style={[styles.backdrop, backdropStyle]} onPress={onClose}>
                 <View style={[styles.modalContainer, containerStyle]}>

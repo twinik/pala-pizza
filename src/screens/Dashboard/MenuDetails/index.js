@@ -1,4 +1,4 @@
-import { View, Text, SafeAreaView, TouchableOpacity, ImageBackground, StyleSheet, Image, ScrollView, FlatList, Button, Alert } from 'react-native'
+import { View, Text, SafeAreaView, TouchableOpacity, ImageBackground, StyleSheet, Image, ScrollView, FlatList, Button, Alert, Platform, StatusBar } from 'react-native'
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { setUser } from '../../../redux/Reducers/AuthReducer';
@@ -45,7 +45,7 @@ const MenuDetails = ({ navigation }) => {
         })
     };
     return (
-        <Wrapper>
+        <Wrapper transparent>
             <Loader visible={loading} />
             <ImageBackground source={Images.BACKGROUND} style={styles.main}>
                 <Image source={Icons.PIZZA1} style={styles.icon} resizeMode='contain' />
@@ -79,6 +79,7 @@ export { MenuDetails }
 const styles = StyleSheet.create({
     main: {
         flex: 1,
+        paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0
     },
     icon: {
         height: UtilityMethods.hp(10),

@@ -13,6 +13,7 @@ import Prompt from '../../../components/Prompt';
 import Loader from '../../../components/Loader';
 import { useDispatch } from 'react-redux';
 import { setUser } from '../../../redux/Reducers/AuthReducer';
+import { BAR_STYLE } from '../../../utility/Constants';
 
 const LoginScreen = ({ navigation }) => {
     const dispatch = useDispatch()
@@ -42,7 +43,7 @@ const LoginScreen = ({ navigation }) => {
         navigation.navigate(Routes.SIGNUP_SCREEN)
     }
     return (
-        <Wrapper transparent backgroundColor="white">
+        <Wrapper transparent barStyle={BAR_STYLE.LIGHT}>
             <Loader visible={loading} />
             <ImageBackground source={Images.RED_BACKGROUND} style={styles.background}>
                 <ScrollView contentContainerStyle={styles.background}>

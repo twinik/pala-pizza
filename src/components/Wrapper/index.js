@@ -13,7 +13,7 @@ const Wrapper = ({ children, style, backgroundColor, transparent, barStyle }) =>
     return (
         <Container style={combinedStyles}>
             <StatusBar
-                barStyle={barStyle ? barStyle : Platform.OS === 'ios' ? 'dark-content' : 'light-content'}
+                barStyle={barStyle ? barStyle : Platform.OS === 'ios' ? 'dark-content' : 'dark-content'}
                 translucent={transparent}
                 backgroundColor={transparent ? 'transparent' : backgroundColor || 'white'}
             />
@@ -27,9 +27,11 @@ const Wrapper = ({ children, style, backgroundColor, transparent, barStyle }) =>
 const styles = StyleSheet.create({
     default: {
         flex: 1,
+        // paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0,
     },
     content: {
         flex: 1,
+        // paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0,
     }
 });
 

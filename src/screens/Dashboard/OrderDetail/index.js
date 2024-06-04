@@ -1,4 +1,4 @@
-import { View, StyleSheet, Image, ScrollView, ImageBackground, Alert } from 'react-native';
+import { View, StyleSheet, Image, ScrollView, ImageBackground, Alert, Platform, StatusBar } from 'react-native';
 import React, { useState } from 'react';
 import { Colors, Fonts, Icons, Images } from '../../../assets';
 import Wrapper from '../../../components/Wrapper';
@@ -49,7 +49,7 @@ const OrderDetail = ({ navigation }) => {
     };
 
     return (
-        <Wrapper>
+        <Wrapper transparent>
             <Loader visible={loading} />
             <ImageBackground source={Images.RED_BACKGROUND} style={styles.background}>
                 <ScrollView contentContainerStyle={styles.background}>
@@ -122,6 +122,8 @@ const styles = StyleSheet.create({
     },
     background: {
         flex: 1,
+        // paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0
+        paddingTop: UtilityMethods.hp(1),
     },
     header: {
         flex: 0.24,

@@ -13,6 +13,7 @@ import PrimaryButton from '../../../components/PrimaryButton';
 import Routes from '../../../navigation/Routes';
 import Prompt from '../../../components/Prompt';
 import Loader from '../../../components/Loader';
+import { BAR_STYLE } from '../../../utility/Constants';
 
 const SignupScreen = ({ navigation }) => {
     const [loading, setLoading] = useState(false)
@@ -40,7 +41,7 @@ const SignupScreen = ({ navigation }) => {
         navigation.goBack()
     }
     return (
-        <Wrapper transparent backgroundColor="white">
+        <Wrapper transparent barStyle={BAR_STYLE.LIGHT}>
             <Loader visible={loading} />
             <ImageBackground source={Images.RED_BACKGROUND} style={styles.background}>
                 <ScrollView contentContainerStyle={styles.background}>
